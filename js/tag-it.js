@@ -97,6 +97,10 @@
             select: function (event, ui) {
                 if (is_new(ui.item.value)) {
                     create_choice(ui.item.value);
+                        
+                    // Call the onTagAdded function
+                    if (options.onTagAdded)
+                        options.onTagAdded();
                 }
                 // Cleaning the input.
                 tag_input.val("");
